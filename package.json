@@ -7,6 +7,7 @@
     "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.client.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.client.prod.js",
     "eslint": "eslint src --ext .js,.ts,.tsx",
+    "prettier": "prettier --trailing-comma es5 --single-quote --write '**/*.{js,tsx,ts,js,json,md}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
@@ -15,12 +16,12 @@
     }
   },
   "lint-staged": {
-    "src/*.{js,jsx,mjs,ts,tsx}": [
+    "**/*.{js,jsx,mjs,ts,tsx}": [
+      "prettier --trailing-comma es5 --single-quote --write",
       "eslint --fix --ext .js,.ts,.tsx",
-      "prettier --write",
       "git add"
     ],
-    "src/*.{css,scss,less,json,html,md,markdown}": [
+    "**/*.{css,scss,less,json,html,md,markdown}": [
       "prettier --write",
       "git add"
     ]

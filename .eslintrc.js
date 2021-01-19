@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    "plugin:prettier/recommended"
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -21,6 +22,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "arrow-body-style": ["error", "always"],
     'no-use-before-define': [0],
