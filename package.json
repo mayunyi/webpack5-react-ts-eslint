@@ -16,9 +16,9 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,jsx,mjs,ts,tsx}": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "eslint --fix --ext .js,.ts,.tsx",
+    "*.{js,jsx,mjs,ts,tsx}": [
+      "eslint --fix --ext .js,.jxs,.ts,.tsx",
+      "prettier --write",
       "git add"
     ],
     "**/*.{css,scss,less,json,html,md,markdown}": [
