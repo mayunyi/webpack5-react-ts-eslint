@@ -1,0 +1,16 @@
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/proposal-object-rest-spread",
+        "@babel/proposal-class-properties",
+        "@babel/plugin-transform-typescript",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-async-to-generator",
+        [ "@babel/plugin-proposal-decorators",{ "legacy": true }],
+        "lodash",
+        "react-hot-loader/babel"
+    ]
+}
