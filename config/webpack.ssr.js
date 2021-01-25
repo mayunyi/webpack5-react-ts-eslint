@@ -1,14 +1,20 @@
+const path = require('path');
 const {merge} = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
+const nodeExternals =  require('webpack-node-externals');
 const ssrConfig = {
     mode: 'production',
+    entry: "../server/index.tsx",
     output: {
+        filename: '[name].ssr.js',
+        path: path.join(process.cwd(), './dist/'),
         publicPath: './',
+        libraryTarget: 'commonjs2'
     },
-
+    target:'node',
+    externals:[nodeExternals()],
     module:{
         rules:[
             {
