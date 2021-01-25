@@ -30,7 +30,7 @@ if (!devMode) {
 
 module.exports = {
     entry: {
-        index: path.join(__dirname, '../src/index.tsx')
+        index: path.join(__dirname, '../src/index.tsx'),
     },
     output: {
         filename: 'js/[name].[fullhash:8].js',
