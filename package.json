@@ -6,8 +6,9 @@
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.client.dev.js",
         "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.client.prod.js",
+        "build-server": "cross-env NODE_ENV=production webpack --config ./config/webpack.ssr.js",
         "test": "eslint src --ext .js,.ts,.tsx",
-        "ssr": "ts-node ./server/start.tsx"
+        "start": "node dist/server.js"
     },
     "husky": {
         "hooks": {

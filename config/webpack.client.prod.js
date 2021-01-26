@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 // const SpeedMeasureWebpack5Plugin = require('speed-measure-webpack5-plugin');
 // const smw = new SpeedMeasureWebpack5Plugin();
-
+const path = require('path');
 const prodConfig = {
     mode: 'production',
     output: {
@@ -19,6 +19,15 @@ const prodConfig = {
     //         cssProcessor: require('cssnano'),
     //     }),
     // ],
+    module:{
+        rules:[
+            {
+                test: /\.(sa|sc|c)ss$/,
+                include: path.resolve(__dirname, '../src'),
+                use: ['ignore-loader'],
+            },
+        ]
+    },
     optimization: {
         minimize:true,
         minimizer:[

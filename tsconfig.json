@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
         "outDir": "./dist/",
+        "rootDir": ".",
         "baseUrl": "./",
         "isolatedModules": true,
-        "target": "es5", /** 编译后的版本 */
+        "target": "es6", /** 编译后的版本 */
         "module": "ESNext",
         "jsx": "react",
         "noImplicitAny": true,
@@ -22,10 +23,13 @@
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "incremental": true
+        "incremental": true,
+        "resolveJsonModule": true,
+        "lib": ["es6", "dom"]
     },
     "include": [
-        "src"
+        "src",
+        "server"
     ],
     "exclude": [
         "node_modules",

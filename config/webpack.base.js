@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
@@ -96,22 +95,7 @@ module.exports = {
     },
     plugins:[
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title: 'index',
-            template: path.resolve(__dirname, `../index.template.html`),
-            hash: false,
-            filename: "index.html",
-            inject: true,
-            minify: {
-                html5: true,
-                collapseWhitespace: true,
-                preserveLineBreaks: true,
-                minifyCSS: true,
-                minifyJS: true,
-                removeComments: true,
-                removeAttributeQuotes: true,
-            },
-        }),
+
 
         new webpack.ProvidePlugin({
             _: 'lodash',

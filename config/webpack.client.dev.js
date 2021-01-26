@@ -4,6 +4,7 @@ const path = require("path");
 const {merge} = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 const portfinder = require('portfinder'); // 增加依赖
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const devConfig = {
@@ -13,7 +14,23 @@ const devConfig = {
         publicPath: '/',
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'index',
+            template: path.resolve(__dirname, `../index.template.html`),
+            hash: false,
+            filename: "index.html",
+            inject: true,
+            minify: {
+                html5: true,
+                collapseWhitespace: true,
+                preserveLineBreaks: true,
+                minifyCSS: true,
+                minifyJS: true,
+                removeComments: true,
+                removeAttributeQuotes: true,
+            },
+        }),
     ],
     devServer: {
         contentBase: path.join(__dirname, './dist'),
