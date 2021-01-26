@@ -1,7 +1,7 @@
 
 import Koa from 'koa';
 
-import serverConfig from './config';
+import serverConfig from './nodeConfig';
 
 const app = new Koa();
 
