@@ -9,7 +9,8 @@
         "build-server": "cross-env NODE_ENV=production webpack --config ./config/webpack.ssr.js",
         "test": "eslint src --ext .js,.ts,.tsx",
         "start": "node dist/server.js",
-        "dev-node-server": "nodemon --exec babel-node server/index.js"
+        "dev-node-server": "nodemon --exec babel-node server/index.js",
+        "dev-ts-start": "nodemon --watch src -e ts,tsx --exec ts-node --files server/start.tsx"
     },
     "husky": {
         "hooks": {

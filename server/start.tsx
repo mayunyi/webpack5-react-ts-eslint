@@ -1,7 +1,17 @@
 
-// @ts-ignore
-require("@babel/register")({
-    presets: ["@babel/preset-env"]
+import Koa from 'koa';
+
+import env from './env';
+
+const app = new Koa();
+
+const { port } = env;
+
+app.use((ctx:Koa.Context, next) => {
+    ctx.body = 'hello world';
+    next();
 });
 
-module.exports = require('./index.js')
+app.listen(port, () => {
+    console.log(`Koa app started at port ${port}`);
+});

@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
+        "outDir": "dist",
         "rootDir": ".",
         "baseUrl": "./",
         "isolatedModules": true,
-        "target": "es6", /** 编译后的版本 */
+        "target": "ES6", /** 编译后的版本 */
         "module": "ESNext",
+//        "module": "CommonJS",
         "jsx": "react",
         "noImplicitAny": true,
         "noUnusedLocals": true,
@@ -25,14 +26,16 @@
         "experimentalDecorators": true,
         "incremental": true,
         "resolveJsonModule": true,
-        "lib": ["es6", "dom"]
+        "lib": ["es6", "dom"],
+        "typeRoots": ["./node_modules/@types", "./types"]
     },
     "include": [
-        "src",
-        "server"
+        "server/**/*",
+        "src/**/*"
     ],
     "exclude": [
         "node_modules",
-        "dist"
+        "dist",
+        "**/*.spec.ts"
     ]
 }
