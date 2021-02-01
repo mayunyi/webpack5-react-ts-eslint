@@ -7,7 +7,7 @@ const app = new Koa();
 
 const { port } = serverConfig;
 
-app.use((ctx: Koa.Context, next) => {
+app.use((ctx, next) => {
     ctx.body = 'hello world';
     next();
 });
