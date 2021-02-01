@@ -5,8 +5,7 @@
         "baseUrl": "./",
         "isolatedModules": true,
         "target": "ES6", /** 编译后的版本 */
-        "module": "ESNext",
-//        "module": "CommonJS",
+        "module": "CommonJS",
         "jsx": "react",
         "noImplicitAny": true,
         "noUnusedLocals": true,
